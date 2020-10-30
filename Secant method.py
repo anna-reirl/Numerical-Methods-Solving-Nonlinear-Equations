@@ -1,10 +1,6 @@
-# Python3 Program to find root of an
-# equations using secant method
-
 # function takes value of x
 # and returns f(x)
 def f(x):
-    # we are taking equation
     # as x^3+x-1
     f = pow(x, 3) + x - 1
     return f
@@ -18,23 +14,23 @@ def secant(x1, x2, E):
     if (f(x1) * f(x2) < 0):
         while True:
 
-            # calculate the intermediate value
+            # рассчитать промежуточное значение
             x0 = ((x1 * f(x2) - x2 * f(x1)) /
                   (f(x2) - f(x1)))
 
-            # check if x0 is root of
-            # equation or not
+            # проверяем, является ли x0 корнем
+            # уравнение или нет
             c = f(x1) * f(x0)
 
-            # update the value of interval
+            # обновить значение интервала
             x1 = x2
             x2 = x0
 
-            # update number of iteration
+            # обновить номер итерации
             n += 1
 
-            # if x0 is the root of equation
-            # then break the loop
+            # если x0 - корень уравнения
+            # затем прервать цикл
             if (c == 0):
                 break
             xm = ((x1 * f(x2) - x2 * f(x1)) /
@@ -51,9 +47,9 @@ def secant(x1, x2, E):
         print("Не удается найти корень в заданном интервале")
 
 
-
 # initializing the values
 x1 = 0
 x2 = 1
 E = 0.0001
 secant(x1, x2, E)
+
